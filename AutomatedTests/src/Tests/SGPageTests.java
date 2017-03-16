@@ -63,6 +63,28 @@ public class SGPageTests {
 		  Thread.sleep(5000);
 		  SGPage.displayCount();
 	  }
+	@Test
+	 public void SGonSG() throws InterruptedException {
+		 driver.get(baseUrl);
+		  ln.Login();
+		  HomePage.clickSmartGroup();
+		  SGPage.clickCreateSG();
+		  SGPage.clickSGonSGs();
+		  SGPage.segmentSG();
+		  Thread.sleep(3000);
+		  SGPage.clickSG();
+	 }
+	 
+	 @Test
+	 public void SGCategory() throws InterruptedException {
+		 driver.get(baseUrl);
+		 ln.Login();
+		 HomePage.clickSmartGroup();
+		 SGPage.clickCreateSG();
+		 SGPage.clickSGCategory();
+		 SGPage.selectCategory();
+		 Thread.sleep(3000);
+	 }
 	
 	 @AfterMethod
 	  public void afterMethod() {
