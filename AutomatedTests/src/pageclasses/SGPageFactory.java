@@ -33,6 +33,15 @@ public class SGPageFactory {
 	@FindBy (xpath="//*[@id='account_rep_0']/span/div/div[2]/div[1]")
 	WebElement AcctRep;
 	
+	@FindBy (css="li[data-qa-id='sgBuilder.segment.SMART_GROUP_INSTANCE_ID.toggle']")
+	WebElement SGonSGs;
+	
+	@FindBy (id="smartGroupOfSmartGroups_elementId")
+	WebElement SegmentOnSG;
+	
+	@FindBy (xpath="//*[@id='active-segmentation']/sg-dynamic-multiselect/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[1]")
+	WebElement SelectSGseg;
+	
 	public SGPageFactory(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -54,6 +63,26 @@ public class SGPageFactory {
 	public void displayCount() {
 		WebElement text = driver.findElement(By.xpath("//*[@id='ars_col_1_0']/div/p"));
 		System.out.println("Acct Reps: " + text.getAttribute("innerText"));
+	}
+	public void clickSGCategory() {
+		SGCategory.click();
+	}
+	
+	public void selectCategory() {
+		Category2.click();
+	}
+	
+	public void clickSGonSGs () {
+		SGonSGs.click();
+		new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+	}
+	
+	public void segmentSG () {
+		SegmentOnSG.click();
+	}
+	
+	public void clickSG () {
+		SelectSGseg.click();
 	}
 	
 }
