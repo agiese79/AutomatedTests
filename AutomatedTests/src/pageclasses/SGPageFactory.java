@@ -23,6 +23,12 @@ public class SGPageFactory {
 	
 	@FindBy (css="button[data-qa-id='sgList.table.addSG']")
 	WebElement noSGcreateButton;
+
+	@FindBy (css="select[data-qa-id='sgBuilder.category']")
+	WebElement SGCategory;
+
+	@FindBy (xpath="//*[@id='sgSetCategory']/option[2]")
+	WebElement Category2;
 	
 	@FindBy (id="CHIP_ACCOUNT_REP_HYBRID")
 	WebElement AcctRepToggle;
