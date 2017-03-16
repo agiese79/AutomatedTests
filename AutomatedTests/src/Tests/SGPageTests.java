@@ -63,6 +63,7 @@ public class SGPageTests {
 		  Thread.sleep(5000);
 		  SGPage.displayCount();
 	  }
+	
 	@Test
 	 public void SGonSG() throws InterruptedException {
 		 driver.get(baseUrl);
