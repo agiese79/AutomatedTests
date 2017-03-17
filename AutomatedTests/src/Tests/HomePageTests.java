@@ -49,6 +49,8 @@ public class HomePageTests {
 		HomePage.clickSearchFan();
 		HomePage.setSearchFan("John Smith");
 		HomePage.selectFan();
+        HomePage.clickMyAccount();
+        HomePage.clickSignout();
   }
   
   @Test
@@ -56,6 +58,8 @@ public class HomePageTests {
 	  driver.get(baseUrl);
       ln.Login();
 	  HomePage.clickSmartGroup();
+      HomePage.clickMyAccount();
+      HomePage.clickSignout();
   }
   
   @Test
@@ -63,6 +67,33 @@ public class HomePageTests {
 	  driver.get(baseUrl);
 	  ln.Login();
 	  HomePage.clickCommunications();
+      HomePage.clickMyAccount();
+      HomePage.clickSignout();
+  }
+
+  @Test
+  public void NavigatetoPrograms () {
+    driver.get(baseUrl);
+    ln.Login();
+    HomePage.clickPrograms();
+    HomePage.clickMyAccount();
+    HomePage.clickSignout();
+  }
+
+  @Test
+  public void NavigatetoReporting () {
+    driver.get(baseUrl);
+    ln.Login();
+    HomePage.clickReporting();
+    HomePage.clickMyAccount();
+    HomePage.clickSignout();
+  }
+
+  @Test
+  public void NavigatetoMyTasks () {
+    driver.get(baseUrl);
+    ln.Login();
+    HomePage.clickMyTasks();
   }
   
   @Test
@@ -74,6 +105,8 @@ public class HomePageTests {
 	  HomePage.setFanLast("Julio");
 	  HomePage.setFanEmail("jj41@email.com");
 	  HomePage.SaveAFan();
+      HomePage.clickMyAccount();
+      HomePage.clickSignout();
   }
   
  
@@ -83,15 +116,14 @@ public class HomePageTests {
 	  ln.Login();
 	  HomePage.clickMyAccount();
 	  HomePage.clickAdmin();
+      HomePage.clickSignout();
   }
   
  
   @AfterMethod
   public void afterMethod() {
-	  HomePage.clickMyAccount();
-	  HomePage.clickSignout();
-	  driver.quit();
-  }
+          driver.quit();
+      }
 
 }
 
