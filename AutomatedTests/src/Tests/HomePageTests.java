@@ -30,7 +30,7 @@ public class HomePageTests {
 @BeforeMethod
 	 public void beforeMethod() {
 		  //need to point setProperty to chromedriver in /AutomatedTests/bin
-// 		System.setProperty("webdriver.chrome.driver", "/Users/aperkins/Desktop/workspace/selenium/chromedriver");
+ 		System.setProperty("webdriver.chrome.driver", "AutomatedTests/bin/chromedriver");
 		driver = new ChromeDriver();
 		baseUrl = "https://qa.fanthreesixty.com";
 			
@@ -93,7 +93,7 @@ public class HomePageTests {
  
   @AfterMethod
   public void afterMethod() {
-	  lo.Logout();
+//	  lo.Logout();
 	  driver.quit();
   }
 
