@@ -13,7 +13,7 @@ public class Login {
 	
 	public Login (WebDriver driver) {
 		this.driver = driver;
-		baseUrl = "https://qa.fanthreesixty.com/";
+		baseUrl = "https://dev.fanthreesixty.com/";
 	}
 	
 	public WebElement Login() {
@@ -22,7 +22,7 @@ public class Login {
 			driver.get(baseUrl + "fanthreesixty/login");
 			driver.findElement(By.id("userId")).sendKeys("dimension+skc@fanthreesixty.com");
 			System.out.println("Input user id");
-			driver.findElement(By.id("password")).sendKeys("FiberPrincess411");
+			driver.findElement(By.id("password")).sendKeys("TechDebt911");
 			System.out.println("Input user password");
 			driver.findElement(By.id("loginButton")).click();
 			

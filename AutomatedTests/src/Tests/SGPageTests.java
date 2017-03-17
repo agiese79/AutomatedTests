@@ -21,7 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageclasses.HomePageFactory;
 import pageclasses.SGPageFactory;
 import utilities.Login;
-import utilities.Logout;
+
 
 
 public class SGPageTests {
@@ -30,13 +30,11 @@ public class SGPageTests {
 		HomePageFactory HomePage;
 		SGPageFactory SGPage;
 		Login ln;
-		Logout lo;
 //		private boolean isProduction=false;
 
 	@BeforeMethod
 	 public void beforeMethod() {
-		  //need to point setProperty to chromedriver in /AutomatedTests/bin
- 		System.setProperty("webdriver.chrome.driver", "/Users/aperkins/Desktop/workspace/selenium/chromedriver");
+ 		System.setProperty("webdriver.chrome.driver", "AutomatedTests/bin/chromedriver");
 		driver = new ChromeDriver();
 		baseUrl = "https://qa.fanthreesixty.com";
 			
@@ -64,7 +62,7 @@ public class SGPageTests {
 		  Thread.sleep(5000);
 		  SGPage.displayCount();
 	  }
-	
+
 	@Test
 	 public void SGonSG() throws InterruptedException {
 		 driver.get(baseUrl);
@@ -76,7 +74,7 @@ public class SGPageTests {
 		  Thread.sleep(3000);
 		  SGPage.clickSG();
 	 }
-	 
+
 	 @Test
 	 public void SGCategory() throws InterruptedException {
 		 driver.get(baseUrl);
@@ -87,10 +85,18 @@ public class SGPageTests {
 		 SGPage.selectCategory();
 		 Thread.sleep(3000);
 	 }
+
+	@Test
+	public void SGAge() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickAge();
+	}
 	
 	 @AfterMethod
 	  public void afterMethod() {
-//		 lo.Logout();
 		 driver.quit();
 	  }
 

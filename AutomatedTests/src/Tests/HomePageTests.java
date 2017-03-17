@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import pageclasses.HomePageFactory;
 import pageclasses.SGPageFactory;
 import utilities.Login;
-import utilities.Logout;
 
 
 
@@ -23,13 +22,11 @@ public class HomePageTests {
 	HomePageFactory HomePage;
 	SGPageFactory SGPage;
 	Login ln;
-	Logout lo;
 //	private boolean isProduction=false;
 	
 	
 @BeforeMethod
 	 public void beforeMethod() {
-		  //need to point setProperty to chromedriver in /AutomatedTests/bin
  		System.setProperty("webdriver.chrome.driver", "AutomatedTests/bin/chromedriver");
 		driver = new ChromeDriver();
 		baseUrl = "https://qa.fanthreesixty.com";
@@ -93,7 +90,6 @@ public class HomePageTests {
  
   @AfterMethod
   public void afterMethod() {
-//	  lo.Logout();
 	  driver.quit();
   }
 

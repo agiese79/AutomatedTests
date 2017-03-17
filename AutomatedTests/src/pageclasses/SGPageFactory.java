@@ -47,6 +47,9 @@ public class SGPageFactory {
 	
 	@FindBy (xpath="//*[@id='active-segmentation']/sg-dynamic-multiselect/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[1]")
 	WebElement SelectSGseg;
+
+	@FindBy (id="CHIP_AGE")
+	WebElement SegmentAge;
 	
 	public SGPageFactory(WebDriver driver) {
 		this.driver = driver;
@@ -89,6 +92,10 @@ public class SGPageFactory {
 	
 	public void clickSG () {
 		SelectSGseg.click();
+	}
+
+	public void clickAge () {
+		SegmentAge.click();
 	}
 	
 }
