@@ -3,7 +3,8 @@ package utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Login {
@@ -25,6 +26,7 @@ public class Login {
 			driver.findElement(By.id("password")).sendKeys("TechDebt911");
 			System.out.println("Input user password");
 			driver.findElement(By.id("loginButton")).click();
+			new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
 			
 			}
 		catch(Exception e) {

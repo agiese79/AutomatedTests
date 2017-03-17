@@ -29,9 +29,7 @@ public class HomePageTests {
 	 public void beforeMethod() {
  		System.setProperty("webdriver.chrome.driver", "AutomatedTests/bin/chromedriver");
 		driver = new ChromeDriver();
-		baseUrl = "https://qa.fanthreesixty.com";
-			
-		
+		baseUrl = "https://dev.fanthreesixty.com";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(baseUrl);
@@ -90,6 +88,8 @@ public class HomePageTests {
  
   @AfterMethod
   public void afterMethod() {
+	  HomePage.clickMyAccount();
+	  HomePage.clickSignout();
 	  driver.quit();
   }
 

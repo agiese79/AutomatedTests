@@ -33,7 +33,7 @@ public class HomePageFactory {
 	@FindBy (css="input[data-qa-id='navbar.fanSearch.field']")
 	WebElement SearchFan;
 	
-	@FindBy (css="a[data-qa-id='navbar.addFan.toggle']")
+	@FindBy (className="create-fan")
 	WebElement AddAFan;
 	
 	@FindBy (css="a[data-qa-id='navbar.tasks']")
@@ -135,7 +135,7 @@ public class HomePageFactory {
 		Admin.click();
 	}
 	
-	 public void clickSignout() {
+	public void clickSignout() {
 	        NavbarAccountSignout.click();
 	     }
 }
