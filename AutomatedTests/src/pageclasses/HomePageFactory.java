@@ -64,7 +64,15 @@ public class HomePageFactory {
 	WebElement Support;
 	
 	@FindBy (css="a[data-qa-id='navbar.account.signout']")
-	WebElement NavbarAccountSignout;	
+	WebElement NavbarAccountSignout;
+
+	@FindBy (className = "currentUserName")
+    WebElement OldDimUser;
+
+	@FindBy (css="a[className='logoutDropdown']")
+    WebElement OldDimLogout;
+
+
 	
 	public HomePageFactory(WebDriver driver) {
 		this.driver = driver;
@@ -138,4 +146,11 @@ public class HomePageFactory {
 	public void clickSignout() {
 	        NavbarAccountSignout.click();
 	     }
+    public void clickOldDimUser() {
+	    OldDimUser.click();
+     }
+
+    public void clickOldDimSignout() {
+	    OldDimLogout.click();
+    }
 }
