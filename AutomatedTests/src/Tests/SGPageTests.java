@@ -34,7 +34,7 @@ public class SGPageTests {
 
 	@BeforeMethod
 	 public void beforeMethod() {
- 		System.setProperty("webdriver.chrome.driver", "AutomatedTests/bin/chromedriver");
+ 		System.setProperty("webdriver.chrome.driver", "/Users/aperkins/QAAutoTests/AutomatedTests/bin/chromedriver");
 		driver = new ChromeDriver();
 		baseUrl = "https://dev.fanthreesixty.com";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

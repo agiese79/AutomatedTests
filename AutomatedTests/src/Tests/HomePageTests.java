@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -27,14 +28,14 @@ public class HomePageTests {
 	
 @BeforeMethod
 	 public void beforeMethod() {
- 		System.setProperty("webdriver.chrome.driver", "AutomatedTests/bin/chromedriver");
+ 		System.setProperty("webdriver.chrome.driver", "/Users/aperkins/QAAutoTests/AutomatedTests/bin/chromedriver");
 		driver = new ChromeDriver();
 		baseUrl = "https://dev.fanthreesixty.com";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(baseUrl);
 		PropertyConfigurator.configure("log4j.properties");
-		
+		WebDriverWait wait = new WebDriverWait(driver, 120);
 		HomePage = new HomePageFactory(driver);
 		ln = new Login(driver);
 	 }
