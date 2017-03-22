@@ -92,6 +92,41 @@ public class SGPageTests {
 		SGPage.clickCreateSG();
 		SGPage.clickAge();
 	}
+
+	@Test
+	public void SGGender() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickGender();
+		SGPage.selectMale();
+	}
+
+	@Test
+	public void SGPostalCode() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickPostalCode();
+		SGPage.inputPostalCode();
+	}
+
+	@Test
+	public void SGState() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickState();
+		SGPage.clickStateDrop();
+		SGPage.selectState();
+	}
+
+
+
+
 	
 	 @AfterMethod
 	  public void afterMethod() {

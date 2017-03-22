@@ -54,11 +54,23 @@ public class SGPageFactory {
 	@FindBy (id="CHIP_GENDER")
 	WebElement SegmentGender;
 
+	@FindBy (id="GENDER_MALE")
+	WebElement Male;
+
 	@FindBy (id="CHIP_POSTAL_CODE")
-	WebElement SegementZipCode;
+	WebElement SegmentZipCode;
+
+	@FindBy (id="POSTAL_CODE")
+	WebElement ZipCode;
 
 	@FindBy (id="CHIP_DISTRICT")
 	WebElement SegmentStateProvince;
+
+	@FindBy (id="district_elementId")
+	WebElement StateDropDown;
+
+	@FindBy (xpath = "//*[@id='active-segmentation']/sg-dynamic-multiselect/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[1]/div/label/span")
+	WebElement FirstState;
 
 	@FindBy (id="CHIP_VERIFIED_EMAIL")
 	WebElement SegmentEmail;
@@ -77,7 +89,7 @@ public class SGPageFactory {
 
 	@FindBy (id="CHIP_TAGS")
 	WebElement SegmentTags;
-	
+
 	
 	public SGPageFactory(WebDriver driver) {
 		this.driver = driver;
@@ -125,5 +137,35 @@ public class SGPageFactory {
 	public void clickAge () {
 		SegmentAge.click();
 	}
-	
+
+	public void clickGender () {
+		SegmentGender.click();
+	}
+
+	public void selectMale() {
+		Male.click();
+	}
+
+	public void clickPostalCode() {
+		SegmentZipCode.click();
+	}
+
+	public void inputPostalCode() {
+		ZipCode.sendKeys("11111");
+	}
+
+	public void clickState() {
+		SegmentStateProvince.click();
+		new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+
+	}
+
+	public void clickStateDrop() {
+		StateDropDown.click();
+	}
+
+	public void selectState() {
+		FirstState.click();
+	}
+
 }
