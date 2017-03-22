@@ -75,14 +75,23 @@ public class SGPageFactory {
 	@FindBy (id="CHIP_VERIFIED_EMAIL")
 	WebElement SegmentEmail;
 
+	@FindBy (id="VERIFIED_EMAIL_VERIFIED")
+	WebElement VerifiedEmail;
+
 	@FindBy (id="CHIP_OWNER_NAME_TYPE")
 	WebElement SegmentProfileType;
 
-	@FindBy (id="CHIP_ACCOUNT_REP_HYBRID")
-	WebElement SegmentAcctRep;
+	@FindBy (id="OWNER_NAME_TYPE_BUSINESS")
+	WebElement BusinessType;
 
 	@FindBy (id="CHIP_CUSTOMER_TYPE")
 	WebElement SegmentAcctType;
+
+	@FindBy (id="accountType_elementId")
+	WebElement AcctTypeDrop;
+
+	@FindBy (xpath="//*[@id='active-segmentation']/sg-dynamic-multiselect/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[4]/div/label/span")
+	WebElement AcctTypeSelect;
 
 	@FindBy (id="CHIP_PROFILE_SOURCE_DATE_HYBRID")
 	WebElement SegmentProfileSource;
@@ -167,5 +176,37 @@ public class SGPageFactory {
 	public void selectState() {
 		FirstState.click();
 	}
+
+	 public void clickEmail() {
+		SegmentEmail.click();
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+
+	 }
+
+	 public void setverifiedEmail() {
+		VerifiedEmail.click();
+	 }
+
+	 public void selectProfileType() {
+		SegmentProfileType.click();
+	 }
+
+	 public void setBusinessType() {
+		BusinessType.click();
+	 }
+
+	 public void clickAcctType() {
+		SegmentAcctType.click();
+	 }
+
+	 public void selectAcctTypeDrop() {
+		AcctTypeDrop.click();
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+	 }
+
+	 public void setAcctType() {
+		AcctTypeSelect.click();
+	 }
+
 
 }

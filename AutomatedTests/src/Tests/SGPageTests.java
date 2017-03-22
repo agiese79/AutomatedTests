@@ -124,6 +124,37 @@ public class SGPageTests {
 		SGPage.selectState();
 	}
 
+	@Test
+	public void SGEmail() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickEmail();
+		SGPage.setverifiedEmail();
+	}
+
+	@Test
+	public void SGProfileType() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.selectProfileType();
+		SGPage.setBusinessType();
+	}
+
+	@Test
+	public void SGAcctType() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickAcctType();
+		SGPage.selectAcctTypeDrop();
+		SGPage.setAcctType();
+	}
+
 
 
 
