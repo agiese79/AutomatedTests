@@ -155,7 +155,29 @@ public class SGPageTests {
 		SGPage.setAcctType();
 	}
 
+	@Test
+	public void SGSourceType() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickSegmentProfileSource();
+		SGPage.setSourceSelection();
+		SGPage.setSource3();
+	}
 
+//	This one has issues....flaky - needs work
+	@Test
+	public void SGTags() throws Exception {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickSegmentTags();
+		SGPage.clickTagDrop();
+//		SGPage.setTag1();
+		Thread.sleep(3000);
+	}
 
 
 	

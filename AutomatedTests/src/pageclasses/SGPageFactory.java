@@ -96,10 +96,23 @@ public class SGPageFactory {
 	@FindBy (id="CHIP_PROFILE_SOURCE_DATE_HYBRID")
 	WebElement SegmentProfileSource;
 
+	@FindBy (id="PROFILE_SOURCE_DATE_HYBRID_source_0")
+    WebElement SourceSelection;
+
+	@FindBy (css="option[label='Dimension']")
+    WebElement Source3;
+
 	@FindBy (id="CHIP_TAGS")
 	WebElement SegmentTags;
 
-	
+	@FindBy (css="button[id='tags_elementId']")
+    WebElement TagDrop;
+
+	@FindBy (xpath="//*[@id='active-segmentation']/sg-dynamic-multiselect[2]/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[1]")
+    WebElement Tag1;
+
+    //*[@id="active-segmentation"]/sg-dynamic-multiselect[2]/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[1]
+
 	public SGPageFactory(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -107,7 +120,8 @@ public class SGPageFactory {
 
 	public void clickCreateSG() {
 		CreateSG.click();
-	}
+        new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+    }
 	
 	public void clickAcctRepToggle() {
 		AcctRepToggle.click();
@@ -166,7 +180,6 @@ public class SGPageFactory {
 	public void clickState() {
 		SegmentStateProvince.click();
 		new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
-
 	}
 
 	public void clickStateDrop() {
@@ -180,7 +193,6 @@ public class SGPageFactory {
 	 public void clickEmail() {
 		SegmentEmail.click();
 		 new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
-
 	 }
 
 	 public void setverifiedEmail() {
@@ -207,6 +219,35 @@ public class SGPageFactory {
 	 public void setAcctType() {
 		AcctTypeSelect.click();
 	 }
+
+	 public void clickSegmentProfileSource() {
+         SegmentProfileSource.click();
+         new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+     }
+
+     public void setSourceSelection() {
+	    SourceSelection.click();
+     }
+
+     public void setSource3() {
+	    Source3.click();
+     }
+
+     public void clickSegmentTags() {
+	    SegmentTags.click();
+         new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+
+     }
+
+     public void clickTagDrop() {
+         TagDrop.click();
+         new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+
+     }
+
+     public void setTag1() {
+	    Tag1.click();
+     }
 
 
 }
