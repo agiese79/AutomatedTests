@@ -50,6 +50,34 @@ public class SGPageFactory {
 
 	@FindBy (id="CHIP_AGE")
 	WebElement SegmentAge;
+
+	@FindBy (id="CHIP_GENDER")
+	WebElement SegmentGender;
+
+	@FindBy (id="CHIP_POSTAL_CODE")
+	WebElement SegementZipCode;
+
+	@FindBy (id="CHIP_DISTRICT")
+	WebElement SegmentStateProvince;
+
+	@FindBy (id="CHIP_VERIFIED_EMAIL")
+	WebElement SegmentEmail;
+
+	@FindBy (id="CHIP_OWNER_NAME_TYPE")
+	WebElement SegmentProfileType;
+
+	@FindBy (id="CHIP_ACCOUNT_REP_HYBRID")
+	WebElement SegmentAcctRep;
+
+	@FindBy (id="CHIP_CUSTOMER_TYPE")
+	WebElement SegmentAcctType;
+
+	@FindBy (id="CHIP_PROFILE_SOURCE_DATE_HYBRID")
+	WebElement SegmentProfileSource;
+
+	@FindBy (id="CHIP_TAGS")
+	WebElement SegmentTags;
+	
 	
 	public SGPageFactory(WebDriver driver) {
 		this.driver = driver;
