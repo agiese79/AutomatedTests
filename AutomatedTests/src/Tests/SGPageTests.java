@@ -41,7 +41,6 @@ public class SGPageTests {
 		driver.manage().window().maximize();
 		driver.get(baseUrl);
 		PropertyConfigurator.configure("log4j.properties");
-		
 		HomePage = new HomePageFactory(driver);
 		SGPage = new SGPageFactory(driver);
 		ln = new Login(driver);
@@ -49,39 +48,35 @@ public class SGPageTests {
 	 }
 
 	 @Test
-	  public void AcctRepSG() throws InterruptedException {
+	  public void AcctRepSG() {
 		  driver.get(baseUrl);
 		  ln.Login();
-		  Thread.sleep(8000);
 		  HomePage.clickSmartGroup();
 		  SGPage.clickCreateSG();
 		  SGPage.clickAcctRepToggle();
 		  SGPage.clickSelection();
-		  Thread.sleep(5000);
 		  SGPage.displayCount();
 	  }
 
 	@Test
-	 public void SGonSG() throws InterruptedException {
+	 public void SGonSG() {
 		 driver.get(baseUrl);
 		  ln.Login();
 		  HomePage.clickSmartGroup();
 		  SGPage.clickCreateSG();
 		  SGPage.clickSGonSGs();
 		  SGPage.segmentSG();
-		  Thread.sleep(3000);
 		  SGPage.clickSG();
 	 }
 
 	 @Test
-	 public void SGCategory() throws InterruptedException {
+	 public void SGCategory() {
 		 driver.get(baseUrl);
 		 ln.Login();
 		 HomePage.clickSmartGroup();
 		 SGPage.clickCreateSG();
 		 SGPage.clickSGCategory();
 		 SGPage.selectCategory();
-		 Thread.sleep(3000);
 	 }
 
 	@Test
@@ -177,6 +172,26 @@ public class SGPageTests {
 		SGPage.clickTagDrop();
 //		SGPage.setTag1();
 		Thread.sleep(3000);
+	}
+
+	@Test
+	public void SGPurchaseDate() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+		SGPage.clickSegPurchaseDate();
+		SGPage.clickSelectPurchasePeriod();
+		SGPage.selectPurchasePeriod();
+	}
+
+	@Test
+	public void SGSections() {
+		driver.get(baseUrl);
+		ln.Login();
+		HomePage.clickSmartGroup();
+		SGPage.clickCreateSG();
+
 	}
 
 

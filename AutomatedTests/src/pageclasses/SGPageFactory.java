@@ -111,7 +111,24 @@ public class SGPageFactory {
 	@FindBy (xpath="//*[@id='active-segmentation']/sg-dynamic-multiselect[2]/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[1]")
     WebElement Tag1;
 
-    //*[@id="active-segmentation"]/sg-dynamic-multiselect[2]/div/div[2]/div[2]/div[1]/div/span/div/div[2]/div[1]
+   @FindBy (id="CHIP_TICKET_PURCHASE_PERIOD")
+   WebElement SegPurchaseDate;
+
+   @FindBy (id="TICKET_PURCHASE_PERIOD")
+   WebElement SelectPurchasePeriod;
+
+   @FindBy (xpath="//*[@id='TICKET_PURCHASE_PERIOD']/option[2]")
+   WebElement PurchasePeriod;
+
+   @FindBy (id="CHIP_SECTIONS_PURCHASED")
+   WebElement SegSections;
+
+   @FindBy (id="SECTIONS_PURCHASED_venue")
+   WebElement SectionsDrop;
+
+   @FindBy (xpath="//*[@id='SECTIONS_PURCHASED_venue']/option[2]")
+   WebElement Sections;
+
 
 	public SGPageFactory(WebDriver driver) {
 		this.driver = driver;
@@ -241,13 +258,34 @@ public class SGPageFactory {
 
      public void clickTagDrop() {
          TagDrop.click();
-         new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
-
      }
 
      public void setTag1() {
 	    Tag1.click();
      }
+
+     public void clickSegPurchaseDate() {
+	    SegPurchaseDate.click();
+         new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.className("panel-loader")));
+     }
+
+     public void clickSelectPurchasePeriod() {
+	    SelectPurchasePeriod.click();
+     }
+
+     public void selectPurchasePeriod () {
+	    PurchasePeriod.click();
+     }
+
+     public void clickSegSections() {
+	    SegSections.click();
+     }
+
+     public void clickSectionsDrop() {
+	    
+     }
+
+
 
 
 }
